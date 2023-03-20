@@ -24,6 +24,31 @@ public int max() {
         return max;
     }
 ```
+Кроме того, с помощью Sales Manager можно расчитать усечённое среднее:
+```java
+public int truncatedMean() {
+        int min = sales[0];
+        for (int sale : sales) {
+            if (sale < min) {
+                min = sale;
+            }
+        }
+        int max = this.max();
+        int sum = 0;
+        int count = 0;
+        int mean = 0;
+        for (int sale : sales) {
+            if (sale != max && sale != min) {
+                sum = sum + sale;
+                count++;
+            }
+        }
+        if (count != 0) {
+            mean = sum / count;
+        }
+        return mean;
+    }
+```
 ## Использование
 1. Создайте новый объект класса `SalesManager` и передайте в него массив с данными о продаже.
 ```java
@@ -32,4 +57,8 @@ SalesManager sales = new SalesManager(new int[]{100, 400, 0, 999, 321});
 2. Вызовите у созданного объекта метод `max`, который возвращает максимальное количество продаж.
 ```java
 System.out.println(sales.max());
+```
+2. Вызовите у созданного объекта метод `truncatedMean`, который возвращает усечённое среднее.
+```java
+System.out.println(truncatedMean.max());
 ```
