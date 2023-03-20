@@ -9,14 +9,14 @@
 ### Хранение данных о продажах
 Sales Manager хранит информацию о количестве продаж в массиве данных `sales`:
 ```java
-protected int[] sales;
+protected long[] sales;
 ```
 ### Анализ статистики продаж
 На основе хранящихся в `sales` данных Sales Manager находит максимальное количество продаж:
 ```java
-public int max() {
-        int max = -1;
-        for (int sale : sales) {
+public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -27,7 +27,7 @@ public int max() {
 ## Использование
 1. Создайте новый объект класса `SalesManager` и передайте в него массив с данными о продаже.
 ```java
-SalesManager sales = new SalesManager(new int[]{100, 400, 0, 999, 321});
+SalesManager sales = new SalesManager(long int[]{100, 400, 0, 999, 321});
 ```
 2. Вызовите у созданного объекта метод `max`, который возвращает максимальное количество продаж.
 ```java
